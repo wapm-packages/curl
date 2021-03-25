@@ -20,6 +20,6 @@ You will need [Wasix](https://github.com/wasmer/wasix) to build the `curl.wasm` 
 
 Steps:
 
-1. Setup wasienv, see
-   [Installation Instructions](https://github.com/wasmer/wasix)
+1. Setup wasix, see
+   [Installation Instructions](https://github.com/wasmerio/wasix)
 2. Run `./build.sh`
