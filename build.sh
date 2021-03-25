@@ -28,15 +28,13 @@ cd ${CURL_DIRECTORY}
 echo "Configure"
 if [ ! -f "./configure" ]; then
     autoreconf -fi
+    wasix-configure ./configure --host wasm32 \
+        --disable-shared --disable-thread --disable-threaded-resolver \
+        --without-libpsl --disable-netrc --disable-unix-sockets \
+        --disable-ipv6 --disable-tftp \
+        --with-ssl=${PREFIX}/${OPENSSL_DIRECTORY} \
+        --disable-ntlm-wb
 fi
-
-wasix-configure ./configure --host wasm32 \
-    --disable-shared --disable-thread --disable-threaded-resolver \
-    --without-libpsl --disable-netrc --disable-unix-sockets \
-    --disable-ipv6 --disable-tftp \
-    --with-ssl=${PREFIX}/${OPENSSL_DIRECTORY} \
-    --disable-ntlm-wb
-
 
 echo "Build"
 make -j8
